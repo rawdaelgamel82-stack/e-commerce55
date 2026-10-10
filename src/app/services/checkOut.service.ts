@@ -9,7 +9,7 @@ type checkOut = {
 export async function checkOutSession(cardId: string, formData: checkOut) {
   const token = await getMyToken();
   const response = await fetch(
-    `https://ecommerce.routemisr.com/api/v1/orders/checkout-session/${cardId}?url=http://localhost:3000`,
+    `https://ecommerce.routemisr.com/api/v1/orders/checkout-session/${cardId}?url=${process.env.DOMAIN}`,
     {
       method: "POST",
       headers: {
